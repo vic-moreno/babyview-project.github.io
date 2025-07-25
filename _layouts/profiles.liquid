@@ -18,23 +18,31 @@ layout: page
             <img src="{{ profile_image_path }}" class="{{ profile_image_class }}" alt="{{ profile.image }}" loading="eager" sizes="{{ sizes }}">
           {% endif %}
           <div class="profile-text">
-  {% if profile.name %}
-    <h3>{{ profile.name }}</h3>
-  {% endif %}
-  {% if profile.role %}
-    <p><strong>{{ profile.role }}</strong></p>
-  {% endif %}
-  {% if profile.website %}
-    <p>{{ profile.website }}</p>
-  {% endif %}
-  {% if profile.more_info %}
-    <div class="more-info">{{ profile.more_info }}</div>
-  {% endif %}
-</div>
+            {% if profile.name %}
+              <h3>{{ profile.name }}</h3>
+            {% endif %}
+            {% if profile.role %}
+              <p><strong>{{ profile.role }}</strong></p>
+            {% endif %}
+            {% if profile.website %}
+              <p>{{ profile.website }}</p>
+            {% endif %}
+            {% if profile.more_info %}
+              <div class="more-info">{{ profile.more_info }}</div>
+            {% endif %}
 
+            {% if profile.content %}
+              <div class="profile-content">
+                {% capture profile_content %}
+                  {% include_relative _pages/{{ profile.content }} %}
+                {% endcapture %}
+                {{ profile_content | markdownify }}
+              </div>
+            {% endif %}
+          </div>
         </div>
 
-       <div class="clearfix"></div>
+        <div class="clearfix"></div>
 
       {% endfor %}
     {% endif %}
