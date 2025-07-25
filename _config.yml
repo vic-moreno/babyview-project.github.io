@@ -204,6 +204,7 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+      css: "css/custom.css"
 
 sass:
   style: compressed
