@@ -10,7 +10,7 @@ profiles:
   # if you want to include more than one profile, just replicate the following block
   # and create one content file for each profile inside _pages/
   - align: right
-  - role: Principal Investigator
+    role: Principal Investigator
     name: Mike Frank
     image: mike.jpg
     content: about_einstein.md
