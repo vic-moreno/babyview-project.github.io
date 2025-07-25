@@ -17,9 +17,21 @@ layout: page
             {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
             {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
           {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
+          <div class="profile-text">
+  {% if profile.name %}
+    <h3>{{ profile.name }}</h3>
+  {% endif %}
+  {% if profile.role %}
+    <p><strong>{{ profile.role }}</strong></p>
+  {% endif %}
+  {% if profile.website %}
+    <p>{{ profile.website }}</p>
+  {% endif %}
+  {% if profile.more_info %}
+    <div class="more-info">{{ profile.more_info }}</div>
+  {% endif %}
+</div>
+
         </div>
 
         <div class="clearfix">
