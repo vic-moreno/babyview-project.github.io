@@ -10,12 +10,11 @@ profiles:
   # if you want to include more than one profile, just replicate the following block
   # and create one content file for each profile inside _pages/
   - align: right
-    role: Principal Investigator
-    name: Mike Frank
+    content: mike.md
+   
     image: mike.jpg
     image_circular: false # crops the image to make it circular
-    website: >
-      <p><a href="http://www.stanford.edu/~mcfrank">webpage</a></p>
+   
   - align: left
     image: prof_pic.jpg
     image_circular: false # crops the image to make it circular
