@@ -1,36 +1,42 @@
 ---
 layout: page
 ---
+
 <div class="post">
   <article>
-    {% if page.profiles %}
-      {% for profile in page.profiles %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
+    {% for profile in site.data.people %}
+      <hr>
+
+      {% if profile.role %}
+        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">{{ profile.role }}</h2>
+      {% endif %}
+
+      <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+        {% if profile.image %}
+          {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+          {% if profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          <div style="flex-shrink: 0; max-width: 150px; margin-right: 1rem;">
             {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
             {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
 
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
+        <div style="flex-grow: 1;">
+          <div style="font-size: 1.3rem; color: #1a73e8; font-weight: 500;">
+            {{ profile.name }}
+            {% if profile.website %}
+              (<a href="{{ profile.website }}" target="_blank">website</a>)
+            {% endif %}
+          </div>
+          {% if profile.position %}
+            <div>{{ profile.position }}</div>
           {% endif %}
         </div>
-      {% endfor %}
-    {% endif %}
+      </div>
+    {% endfor %}
   </article>
 </div>
