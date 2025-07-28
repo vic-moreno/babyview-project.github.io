@@ -14,14 +14,11 @@ layout: page
       <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
         {% if profile.image %}
           {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-          {% if profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-          {% endif %}
-          <div style="flex-shrink: 0; max-width: 150px; margin-right: 1rem;">
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          
+          <div style="flex-shrink: 0; width: 150px; height: 200px; overflow: hidden; margin-right: 1rem;">
             {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
+            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image style="object-fit: cover; width: 100%; height: 100%;" %}
           </div>
         {% endif %}
 
