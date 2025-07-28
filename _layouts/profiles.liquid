@@ -15,35 +15,21 @@ layout: page
               {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
             {% endif %}
             {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            <img src="{{ profile_image_path }}" class="{{ profile_image_class }}" alt="{{ profile.image }}" loading="eager" sizes="{{ sizes }}">
+            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
           {% endif %}
-          <div class="profile-text">
-            {% if profile.name %}
-              <h3>{{ profile.name }}</h3>
-            {% endif %}
-            {% if profile.role %}
-              <p><strong>{{ profile.role }}</strong></p>
-            {% endif %}
-            {% if profile.website %}
-              <p>{{ profile.website }}</p>
-            {% endif %}
-            {% if profile.more_info %}
-              <div class="more-info">{{ profile.more_info }}</div>
-            {% endif %}
-
-            {% if profile.content %}
-              <div class="profile-content">
-                {% capture profile_content %}
-                  {% include_relative _pages/{{ profile.content }} %}
-                {% endcapture %}
-                {{ profile_content | markdownify }}
-              </div>
-            {% endif %}
-          </div>
+          {% if profile.more_info %}
+            <div class="more-info">{{ profile.more_info }}</div>
+          {% endif %}
         </div>
 
-        <div class="clearfix"></div>
-
+        <div class="clearfix">
+          {% if profile.content %}
+            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+            {{ profile_content | markdownify }}
+          {% else %}
+            {{ content }}
+          {% endif %}
+        </div>
       {% endfor %}
     {% endif %}
   </article>
