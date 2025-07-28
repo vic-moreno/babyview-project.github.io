@@ -1,5 +1,3 @@
----
-name: Mike Frank
-role: Principal Investigator
-website: http://www.stanford.edu/~mcfrank
----
+Principal Investigator.
+Mike Frank
+http://www.stanford.edu/~mcfrank
