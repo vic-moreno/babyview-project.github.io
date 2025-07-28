@@ -1,39 +1,43 @@
 ---
-layout: page
+layout: default
+title: People
+permalink: /people
 ---
 
-<div class="post">
-  <article>
-    {% for profile in site.data.people %}
-      <hr>
+<div class="peoplelayout">
 
-      {% if profile.role %}
-        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">{{ profile.role }}</h2>
-      {% endif %}
+  {% assign roles = site.data.people | group_by: "role" %}
 
-      <div style="display: flex; align-items: center; margin-bottom: 2rem;">
-        {% if profile.image %}
-          {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+  {% for role_group in roles %}
+    <h1 style="margin-top: 2rem;">{{ role_group.name }}</h1>
+    <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+
+      {% for person in role_group.items %}
+        <div class="member" style="display: flex; align-items: center; max-width: 600px;">
           
-          <div style="flex-shrink: 0; width: 200px; height: 260px; overflow: hidden; margin-right: 1.5rem;">
-            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image style="object-fit: cover; width: 100%; height: 100%;" %}
-          </div>
-        {% endif %}
-
-        <div style="flex-grow: 1;">
-          <div style="font-size: 1.3rem; color: #1a73e8; font-weight: 500;">
-            {{ profile.name }}
-            {% if profile.website %}
-              (<a href="{{ profile.website }}" target="_blank">website</a>)
+          {% if person.image %}
+            <img 
+              src="{{ '/assets/img/' | append: person.image }}" 
+              alt="{{ person.name }}" 
+              style="width: 200px; height: 260px; object-fit: cover; margin-right: 1rem; border-radius: 5px;"
+            >
+          {% endif %}
+          
+          <div>
+            <div style="font-size: 1.3rem; font-weight: 600; color: #1a73e8;">
+              {{ person.name }}
+              {% if person.website %}
+                (<a href="{{ person.website }}" target="_blank" rel="noopener">website</a>)
+              {% endif %}
+            </div>
+            {% if person.position %}
+              <div style="font-style: italic; margin-top: 0.3rem;">{{ person.position }}</div>
             {% endif %}
           </div>
-          {% if profile.position %}
-            <div>{{ profile.position }}</div>
-          {% endif %}
+          
         </div>
-      </div>
-    {% endfor %}
-  </article>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
 </div>
