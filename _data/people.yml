@@ -1,7 +1,18 @@
 - name: Mike Frank
-  role: Co-Principal Investigator
+  role: Principal Investigators
   position: Professor of Psychology at Stanford University
   website: http://www.stanford.edu/~mcfrank
   image: mike.jpg
 
+- name: Bria Long
+  role: Principal Investigators
+  position: Assistant Professor of Psychology at Univeristy of California, San Diego
+  website: https://www.brialong.com/
+  image: bria.png
+
+- name: Alvin Tan
+  role: Analysis Team 
+  position: Graduate Student
+  website: https://alvinwmtan.github.io/
+  image: alvin.png
 
