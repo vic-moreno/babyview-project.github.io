@@ -25,11 +25,13 @@ permalink: /people
           
           <div>
             <div style="font-size: 1.3rem; font-weight: 600; color: #1a73e8;">
-              {{ person.name }}
               {% if person.website %}
-                (<a href="{{ person.website }}" target="_blank" rel="noopener">website</a>)
+                <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #1a73e8; text-decoration: none;">{{ person.name }}</a>
+              {% else %}
+                {{ person.name }}
               {% endif %}
             </div>
+
             {% if person.position %}
               <div style="font-style: italic; margin-top: 0.3rem;">{{ person.position }}</div>
             {% endif %}
