@@ -28,23 +28,23 @@
   website: 
   image: grace.jpg
 
- - name: Meesha Ryan
-   role: Research Staff
-   position: Research Coordinator (Language and Cognition Lab, Stanford University)
-   website: http://www.linkedin.com/in/meesha-r-2a63461b2
-   image: meesha.jpeg
+- name: Meesha Ryan
+  role: Research Staff
+  position: Research Coordinator (Language and Cognition Lab, Stanford University)
+  website: http://www.linkedin.com/in/meesha-r-2a63461b2
+  image: meesha.jpeg
 
- - name: Madison Paron
-   role: Research Staff
-   position: Research Coordinator (Language and Cognition Lab, Stanford University)
-   website: madisonparon.com
-   image: madison.jpeg
+- name: Madison Paron
+  role: Research Staff
+  position: Research Coordinator (Language and Cognition Lab, Stanford University)
+  website: madisonparon.com
+  image: madison.jpeg
 
--  name: Victor A. Moreno
-   role: Research Staff
-   position: Lab Manager (Language and Cognition Lab, Stanford University)
-   website: 
-   image: victor.jpg
+- name: Victor A. Moreno
+  role: Research Staff
+  position: Lab Manager (Language and Cognition Lab, Stanford University)
+  website: 
+  image: victor.jpg
    
 - name: Alvin Tan
   role: Analysis Team 
@@ -57,13 +57,13 @@
   position: Lab Coordinator (Visual Learning Lab, UC San Diego)
   website: http://www.tarunsepuri.com
   image: tarun.jpeg
-
--  name: Jane Yang 
-   role: Analysis Team 
-   position: Graduate Student (Visual Learning Lab, UC San Diego)
-   website: 
-   image: jane.jpg
-
+  
+- name: Jane Yang 
+  role: Analysis Team 
+  position: Graduate Student (Visual Learning Lab, UC San Diego)
+  website: 
+  image: jane.jpg
+  
 - name: Khai Loong Aw 
   role: Analysis Team 
   position: Graduate Student (NeuroAI Lab, Stanford University)
