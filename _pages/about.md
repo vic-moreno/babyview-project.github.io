@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 
 The BabyView Project is a research initiative dedicated to capturing children’s everyday experiences via high-resolution videos taken from the infant perspective, and to using the resulting video data to better understand cognitive development. Our dataset is currently the largest open video dataset of children’s everyday experience to date, both in terms of the number of hours and the diversity of the participating families; data collection is currently ongoing.
 
-You can find information on our current ongoing [projects]({{ '/projects/' | relative_url }}), how to access the [releases]({{ '/dataset/' | relative_url }}) of the dataset, and the specifics about the build of the BabyView [camera]({{ '/camera/' | relative_url }}).
+You can find information on our current [publications]({{ '/publications/' | relative_url }}), how to access the [releases]({{ '/dataset/' | relative_url }}) of the dataset, and the specifics about the build of the BabyView [camera]({{ '/camera/' | relative_url }}).
 
 ## Funding
 

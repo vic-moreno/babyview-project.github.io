@@ -1,46 +1,45 @@
 ---
 layout: default
-title: People
+title: people
 permalink: /people
 ---
 
 <div class="peoplelayout">
 
-  {% assign roles = site.data.people | group_by: "role" %}
+ {% assign roles = site.data.people | group_by: "role" %}
 
-  {% for role_group in roles %}
-    <h1 style="margin-top: 2rem;">{{ role_group.name }}</h1>
-    <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+ {% for role_group in roles %}
+   <h3 style="margin-top: 1rem;margin-bottom:1.5rem">{{ role_group.name }}</h3>
+   <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
 
-      {% for person in role_group.items %}
-        <div class="member" style="display: flex; align-items: center; max-width: 600px;">
-          
-          {% if person.image %}
-            <img 
-              src="{{ '/assets/img/' | append: person.image }}" 
-              alt="{{ person.name }}" 
-              style="width: 200px; height: 260px; object-fit: cover; object-position: top center; margin-right: 1rem; border-radius: 5px; background-color: #eee;"
-            >
+     {% for person in role_group.items %}
+       <div class="member" style="display: flex; flex-direction: column; align-items: center; width: 180px;">
+         
+         {% if person.image %}
+           <img 
+             src="{{ '/assets/img/' | append: person.image }}" 
+             alt="{{ person.name }}" 
+             style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
+           >
+         {% endif %}
+         
+         <div style="text-align: center;">
+           <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
+             {% if person.website %}
+               <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none;">{{ person.name }}</a>
+             {% else %}
+               {{ person.name }}
+             {% endif %}
+           </div>
 
-          {% endif %}
-          
-          <div>
-            <div style="font-size: 1.3rem; font-weight: 600; color: #86a5c4;">
-              {% if person.website %}
-                <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none;">{{ person.name }}</a>
-              {% else %}
-                {{ person.name }}
-              {% endif %}
-            </div>
-
-            {% if person.position %}
-              <div style="font-style: italic; margin-top: 0.3rem;">{{ person.position }}</div>
-            {% endif %}
-          </div>
-          
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
+           {% if person.position %}
+             <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
+           {% endif %}
+         </div>
+         
+       </div>
+     {% endfor %}
+   </div>
+ {% endfor %}
 
 </div>
