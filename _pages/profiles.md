@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-title: People
+title: people
 description: Meet the BabyView team!
 nav: true
 nav_order: 1
