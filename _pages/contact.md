@@ -3,7 +3,7 @@ layout: page
 title: contact
 permalink: /contact/
 description: Contact us.
-nav: true
+nav: false
 nav_order: 6
 horizontal: false
 ---
