@@ -55,14 +55,4 @@ However, the GoPro Hero Bones has been discontinued, and we have created an upda
 
 ---
 
-## Contact and Acknowledgements
-Contributors:  
-Bria Long<sup>1</sup>, Sarah Goodin<sup>2</sup>, George Kachergis<sup>1</sup>, Virginia A. Marchman<sup>1</sup>, Samaher F. Radwan<sup>1</sup>, Robert Z. Sparks<sup>1</sup>, Violet Xiang<sup>1</sup>, Chengxu Zhuang<sup>1</sup>, Oliver Hsu<sup>2</sup>, Brett Newman<sup>2</sup>, Daniel L. K. Yamins<sup>1,3</sup>, Michael C. Frank<sup>1</sup>
 
-<sup>1</sup> Department of Psychology, Stanford University  
-<sup>2</sup> Daylight Design  
-<sup>3</sup> Department of Computer Science, Stanford University
-
-Research and development of the BabyView was supported by a generous gift from The Schmidt Futures Foundation ([https://www.schmidtfutures.com/](https://www.schmidtfutures.com/)).
-
-For more information, contact [Michael Frank](http://web.stanford.edu/~mcfrank/).
