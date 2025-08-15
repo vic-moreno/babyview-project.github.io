@@ -16,6 +16,10 @@ The BabyView Project is a research initiative dedicated to capturing children’
 
 You can find information on our current [publications]({{ '/publications/' | relative_url }}), how to access the [releases]({{ '/dataset/' | relative_url }}) of the dataset, and the specifics about the build of the BabyView [camera]({{ '/camera/' | relative_url }}).
 
+## Data Snapshot
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shrfUtt2gWNMcQN5V" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
 ## Funding
 
 The BabyView project acknowledges generous support from: 
